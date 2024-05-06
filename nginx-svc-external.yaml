@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: nginx-svc-external
+  labels:
+    app: nginx
+    purpose: learning
+spec:
+  type: ExternalName
+  externalName: nginx-qt.com
+  selector:
+    app: nginx
+  ports:
+    - targetPort: 80
+      port: 80
